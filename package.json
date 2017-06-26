@@ -1,0 +1,28 @@
+{
+  "name": "allex_unixsocketcleanerserverruntimelib",
+  "version": "1.0.0",
+  "description": "AllexJS server runtime lib for cleaning after unix sockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allex-serverruntime-libs/unixsocketcleaner.git"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "server",
+    "runtime",
+    "lib",
+    "unix",
+    "socket",
+    "cleaner"
+  ],
+  "author": "Andrija Petrovic <andrija.hers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allex-serverruntime-libs/unixsocketcleaner/issues"
+  },
+  "homepage": "https://github.com/allex-serverruntime-libs/unixsocketcleaner#readme"
+}
