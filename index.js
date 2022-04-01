@@ -22,7 +22,7 @@ function checkForUnixSocketResidue(filename, exc){
     console.log('pipe cleaner will NOT ignore ECONNRESET in nodejs 14 because the stack trace was deeper than 4', stack);
   }
   if (exc) {
-    console.log(process.pid, 'pipe cleaner got', exc);
+    //console.log(process.pid, 'pipe cleaner got', exc);
   }
   if(typeof filename === 'object' && filename instanceof Array){
     filename.forEach(removePipe);
@@ -33,11 +33,9 @@ function checkForUnixSocketResidue(filename, exc){
 
 function enableUnixSocketResidueCleaning(filename){
   var cfusr = checkForUnixSocketResidue.bind(null, filename);
-
+  process.on('SIGINT',cfusr);
+  process.on('SIGTERM',cfusr);
   process.on('exit',cfusr);
-  process.on('SIGINT',process.exit.bind(process, 0));
-  process.on('uncaughtException',cfusr);
-
 }
 
 module.exports = enableUnixSocketResidueCleaning;
