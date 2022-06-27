@@ -1,6 +1,6 @@
 {
   "name": "allex_unixsocketcleanerserverruntimelib",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AllexJS server runtime lib for cleaning after unix sockets",
   "main": "index.js",
   "scripts": {

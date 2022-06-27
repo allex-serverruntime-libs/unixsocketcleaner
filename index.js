@@ -31,11 +31,14 @@ function checkForUnixSocketResidue(filename, exc){
   }
 }
 
-function enableUnixSocketResidueCleaning(filename){
-  var cfusr = checkForUnixSocketResidue.bind(null, filename);
-  process.on('SIGINT',cfusr);
-  process.on('SIGTERM',cfusr);
-  process.on('exit',cfusr);
-}
+function createLib (lib) {
+  'use strict';
 
-module.exports = enableUnixSocketResidueCleaning;
+  function enableUnixSocketResidueCleaning(filename){
+    lib.shouldClose.attachForSingleShot(checkForUnixSocketResidue.bind(null, filename));
+    filename = null;
+  }
+
+  return enableUnixSocketResidueCleaning;
+}
+module.exports = createLib;
