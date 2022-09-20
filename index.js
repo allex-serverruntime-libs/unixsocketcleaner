@@ -13,8 +13,7 @@ function checkForUnixSocketResidue(filename, exc){
     return;
   }
   if (!exc) {
-    console.trace();
-    console.error('No exception in shouldClose?');
+    return;
   }
   if (exc) {
     //console.log(process.pid, 'pipe cleaner got', exc);
